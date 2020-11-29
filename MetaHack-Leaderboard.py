@@ -32,19 +32,9 @@ def main():
     # Close communication with the database.
     conn.close()
 
-
-
 def parse_cmdline():
     parser = ArgumentParser(description=__doc__,
                             formatter_class=RawTextHelpFormatter)
-    parser.add_argument(
-        "dsn",
-        help="database connection string\n\n"
-             "For cockroach demo, use postgresql://<username>:<password>@<hostname>:<port>/leaderboard?sslmode=require,\n"
-             "with the username and password created in the demo cluster, and the hostname and port listed in the\n"
-             "(sql/tcp) connection parameters of the demo cluster welcome message."
-    )
-
     parser.add_argument("-v", "--verbose",
                         action="store_true", help="print debug info")
 
